@@ -1,0 +1,166 @@
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1004px
+) !default;
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1004px
+) !default;
+
+@import "boostrap400/bootstrap-grid.scss";
+
+
+@import "../fonts/Europe.css";
+
+$orange : #eb5017;
+$dark   : $dark;
+
+a,a:hover{
+    text-decoration: none;
+}
+
+.container{
+    //padding:0;
+}
+
+body{
+    font-family: 'Arial';
+    font-size:14px;
+}
+
+.header{
+    padding-top: 23px;
+
+
+    &__contact-us{
+        padding: 15px 0 0 55px;
+        letter-spacing: 0.01em;
+    }
+
+    &__contact-phone{
+        font-size: 18px;
+        font-family: "Europe";
+        color: rgb( 235, 80, 23 );
+        line-height: 1.111;
+        display:block;
+
+    }
+
+
+
+    &__logo {
+        img{
+            margin-left:2px;
+        }
+    }
+
+    .container:first-child {
+        padding: 0;
+    }
+
+    .main-menu{
+        margin-top:21px;
+    }
+}
+
+.main-menu {
+    border:1px solid #e0e0e0;
+    background: $dark;
+    &__list{
+        padding-left: 14px;
+        //padding:0;
+        margin:0;
+        list-style-type:none;
+    }
+
+    &__item{
+        padding: 0 40px 0 34px;
+        cursor:pointer;
+        border-right:1px solid $orange;
+        &:last-child{
+            border:none;
+        }
+        a{
+            font-size: 14px;
+            font-family: "Arial";
+            color: #fff;
+            line-height: 43px;
+
+        }
+        &:hover{
+            background: $orange;
+        }
+    }
+}
+
+
+.breadcrumb{
+    font-size:12px;
+    color:$dark;
+    &__list {
+        @extend .d-flex;
+        list-style-type:none;
+        padding: 11px 21px;
+        letter-spacing: 0.001em;
+    }
+
+    &__item{
+        a {
+            color:$dark;
+            text-decoration: underline;
+        }
+
+        a:after{
+            content: "-";
+            width: 10px;
+            display: inline-block;
+            text-align: center;
+        }
+    }
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: -4px;
+
+    &__inner{
+        height: 54px;
+        border:1px solid #e0e0e0;
+        background: $dark;
+    }
+
+
+
+}
+
+.footer-menu{
+    padding-left: 34px;
+    list-style-type:none;
+    &__item{
+        cursor:pointer;
+        margin: 0 13px;
+        &:last-child{
+            border:none;
+        }
+        a{
+            font-size: 12px;
+            font-family: "Arial";
+            color: #fff;
+            line-height: 34px;
+            letter-spacing: 0.009em;
+            text-decoration: underline;
+
+        }
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

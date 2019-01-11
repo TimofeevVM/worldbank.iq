@@ -3,8 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <title>World Bank</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+
 </head>
 <body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 header__logo">
+                    <img src="/img/logo.png" alt="logo">
+                </div>
+                <div class="col-lg-3 offset-lg-6 header__contact-us">
+                    <a class="header__contact-phone" href="tel:88001005005">8-800-100-5005</a>
+                    <a class="header__contact-phone" href="tel:+73452522000">+7 (3452) 522-000</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <nav class="main-menu col-lg-12">
+                    <ul class="main-menu__list d-flex">
+                        <li class="main-menu__item">
+                            <a href="#">Кредитные карты</a>
+                        </li>
+                        <li class="main-menu__item">
+                            <a href="#">Вклады</a>
+                        </li>
+                        <li class="main-menu__item">
+                            <a href="#">Дебетовая карта</a>
+                        </li>
+                        <li class="main-menu__item">
+                            <a href="#">Страхование</a>
+                        </li>
+                        <li class="main-menu__item">
+                            <a href="#">Друзья</a>
+                        </li>
+                        <li class="main-menu__item">
+                            <a href="#">Интернет-банк</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+
+    <aside class="breadcrumb">
+        <div class="container">
+            <div class="row">
+                <ul class="breadcrumb__list col-lg-12">
+                    <li class="breadcrumb__item"><a href="#">Главная</a></li>
+                    <li class="breadcrumb__item"><a href="#">Вклады</a></li>
+                    <li class="breadcrumb__item">Калькулятор</li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <section id="calc" class="calc">
+        <div class="container">
+            <div class="row">
+                <form>
+                    <h2>Калькулятор</h2>
+                    <div class="form-group">
+                        <label>Дата оформления вклада</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Сумма вклада</label>
+                    </div>
+                    <div class="form-group">
+                        <label>Срок вклада</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Пополнение вклада</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Сумма пополнения вклада</label>
+                    </div>
+                    <button type="submit">Расчитать</button>
+                    <span>Результат: 10 250 руб</span>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <aside class="col-lg-12  footer__inner">
+                    <ul class="footer-menu d-flex">
+                        <li class="footer-menu__item"><a href="#">Кредитные карты</a></li>
+                        <li class="footer-menu__item"><a href="#">Вклады</a></li>
+                        <li class="footer-menu__item"><a href="#">Дебетовая карта</a></li>
+                        <li class="footer-menu__item"><a href="#">Страхование</a></li>
+                        <li class="footer-menu__item"><a href="#">Друзья</a></li>
+                        <li class="footer-menu__item"><a href="#">Интернет-банк</a></li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
