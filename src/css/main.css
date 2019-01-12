@@ -1059,8 +1059,16 @@ html {
   .align-self-xl-stretch {
     align-self: stretch !important; } }
 
+* {
+  padding: 0;
+  margin: 0; }
+
 a, a:hover {
   text-decoration: none; }
+
+h1 {
+  color: #eb5017;
+  font-size: 30px; }
 
 body {
   font-family: 'Arial';
@@ -1082,7 +1090,7 @@ body {
   .header .container:first-child {
     padding: 0; }
   .header .main-menu {
-    margin-top: 21px; }
+    margin-top: 18px; }
 
 .main-menu {
   border: 1px solid #e0e0e0;
@@ -1110,7 +1118,7 @@ body {
   color: #343a40; }
   .breadcrumb__list {
     list-style-type: none;
-    padding: 11px 21px;
+    padding: 13px 21px;
     letter-spacing: 0.001em; }
   .breadcrumb__item a {
     color: #343a40;
@@ -1124,11 +1132,11 @@ body {
 .footer {
   position: absolute;
   width: 100%;
-  bottom: 0;
-  margin-bottom: -4px; }
+  bottom: 0; }
   .footer__inner {
     height: 54px;
     border: 1px solid #e0e0e0;
+    border-bottom: none;
     background: #343a40; }
 
 .footer-menu {
@@ -1148,3 +1156,93 @@ body {
       text-decoration: underline; }
     .footer-menu__item:hover {
       text-decoration: underline; }
+
+.calc__inner {
+  padding: 12px 0 7px;
+  background: #f2f2f2;
+  margin: 12px 21px; }
+  .calc__inner h1 {
+    margin-left: 94px; }
+
+.form-calc {
+  margin-top: 20px; }
+  .form-calc__group {
+    padding: 8px 0 12px;
+    display: flex; }
+    .form-calc__group label {
+      width: 195px;
+      text-align: right;
+      display: inline-block;
+      margin-right: 24px; }
+    .form-calc__group input:not([type="radio"]), .form-calc__group select {
+      width: 86px;
+      padding: 2px;
+      height: 22px; }
+    .form-calc__group .radio-group {
+      margin-right: 27px; }
+      .form-calc__group .radio-group input {
+        margin-right: 9px; }
+  .form-calc .result__label {
+    color: #395306;
+    font-weight: bold; }
+  .form-calc button {
+    margin: 20px 20px; }
+
+.btn-green {
+  background-image: url(../img/bg-btn.png);
+  width: 103px;
+  height: 37px;
+  outline: 0 !important;
+  border: 0 !important;
+  background-color: transparent;
+  cursor: pointer;
+  color: #395306;
+  font-weight: bold; }
+
+.slider-group {
+  margin-left: 23px;
+  display: inline-block; }
+  .slider-group .value-group {
+    display: flex;
+    margin-top: 3px; }
+  .slider-group .slider_min, .slider-group .slider_max {
+    display: inline-block;
+    font-family: 'Verdana';
+    font-style: italic;
+    font-size: 10px;
+    color: #676767; }
+  .slider-group .slider_max {
+    margin-left: auto; }
+
+.slider {
+  width: 240px;
+  height: 9px;
+  display: inline-block;
+  border: 1px solid #fff !important;
+  border-radius: 10px;
+  background: #1e1f22;
+  outline: 0 !important; }
+  .slider .ui-slider-range {
+    border: 1px solid #212227;
+    border-radius: 10px; }
+  .slider .ui-slider-handle {
+    background-image: url(../img/slider-handle.png);
+    background-color: transparent;
+    width: 9px;
+    height: 8px;
+    outline: 0 !important;
+    border: none !important;
+    top: initial; }
+  .slider .ui-state-active {
+    background-color: transparent; }
+
+.gradient-slider, .slider .ui-slider-range {
+  background-color: #89af35;
+  /* IE9, iOS 3.2+ */
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBzdG9wLWNvbG9yPSIjNmY5MzFlIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNhM2NhNGMiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0, #6f931e), color-stop(1, #a3ca4c));
+  /* Android 2.3 */
+  background-image: -webkit-repeating-linear-gradient(top, #6f931e 0%, #a3ca4c 100%);
+  /* IE10+ */
+  background-image: repeating-linear-gradient(to bottom, #6f931e 0%, #a3ca4c 100%);
+  background-image: -ms-repeating-linear-gradient(top, #6f931e 0%, #a3ca4c 100%); }

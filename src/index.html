@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>World Bank</title>
-    <link rel="stylesheet" href="/css/reset.css">
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <link rel="stylesheet" href="/css/main.css">
 
+    <script src="js/datepicker-ru.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
     <header class="header">
@@ -65,29 +72,78 @@
     <section id="calc" class="calc">
         <div class="container">
             <div class="row">
-                <form>
-                    <h2>Калькулятор</h2>
-                    <div class="form-group">
-                        <label>Дата оформления вклада</label>
-                    </div>
+                <div class="calc__inner col-lg-8">
+                    <h1>Калькулятор</h1>
+                    <form class="form-calc">
 
-                    <div class="form-group">
-                        <label>Сумма вклада</label>
-                    </div>
-                    <div class="form-group">
-                        <label>Срок вклада</label>
-                    </div>
+                        <div class="form-calc__group">
+                            <label>Дата оформления вклада</label>
+                            <input type="text" id="dateDeposit" pattern="^[ 0-9]+$">
+                        </div>
 
-                    <div class="form-group">
-                        <label>Пополнение вклада</label>
-                    </div>
+                        <div class="form-calc__group">
+                            <label>Сумма вклада</label>
+                            <input type="text" id="input-sumDeposit">
+                            <span class="slider-group">
+                                <span id="slider-sumDeposit" class="slider"></span>
+                                <div class="value-group">
+                                    <span class="slider_min">1 тыс. руб.</span>
+                                    <span class="slider_max">3 000 000</span>
+                                </div>
 
-                    <div class="form-group">
-                        <label>Сумма пополнения вклада</label>
-                    </div>
-                    <button type="submit">Расчитать</button>
-                    <span>Результат: 10 250 руб</span>
-                </form>
+                            </span>
+                        </div>
+                        <div class="form-calc__group">
+                            <label>Срок вклада</label>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+
+                        <div class="form-calc__group">
+                            <label>Пополнение вклада</label>
+                            <span class="radio-group">
+                                <input name="isReplenished" type="radio" value="0" checked>Нет
+                            </span>
+                            <span class="radio-group">
+                                <input name="isReplenished" type="radio" value="1">Да
+                            </span>
+
+
+                        </div>
+
+                        <div class="form-calc__group">
+                            <label>Сумма пополнения вклада</label>
+
+                            <input type="text" id="input-addSumDeposit">
+                            <span class="slider-group">
+                                <span id="slider-addSumDeposit" class="slider"></span>
+                                <div class="value-group">
+                                    <span class="slider_min">1 тыс. руб.</span>
+                                    <span class="slider_max">3 000 000</span>
+                                </div>
+
+                            </span>
+
+                        </div>
+                        <button type="submit" class="btn-green">Расчитать</button>
+                        <span class="result">
+                            <span class="result__label">
+                                Результат:
+                            </span>
+                            <span class="result__value">
+                                 10 250
+                            </span>
+                            <span class="result__cy">
+                                 руб
+                            </span>
+                        </span>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
