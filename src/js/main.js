@@ -75,7 +75,42 @@ function initCalcForm(){
 
 function handleSubmitCalcForm(e){
     e.preventDefault();
-    console.log(getFormData($(e.target)));
+
+    $.ajax({
+        type: "POST",
+        url: "/api/calc.php",
+
+        data: JSON.stringify({
+            data:getFormData($(e.target))
+        }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function(data){
+            const $res = $($('.result')[0]);
+            $res.show();
+            $res.find('.result__value').text(formatStr(data.response+''));
+        },
+        failure: function(err) {
+            console.log(err);
+        }
+    });
+}
+
+function formatStr(str) {
+    str = str.replace(/(\.(.*))/g, '');
+    var arr = str.split('');
+    var str_temp = '';
+    if (str.length > 3) {
+        for (var i = arr.length - 1, j = 1; i >= 0; i--, j++) {
+            str_temp = arr[i] + str_temp;
+            if (j % 3 == 0) {
+                str_temp = ' ' + str_temp;
+            }
+        }
+        return str_temp;
+    } else {
+        return str;
+    }
 }
 
 function getFormData($form){
