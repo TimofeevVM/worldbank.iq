@@ -2,6 +2,8 @@ $(document).ready(function(){
     initDateDeposit();
     initSlider('sumDeposit');
     initSlider('addSumDeposit');
+
+    initCalcForm();
 });
 
 function initDateDeposit() {
@@ -64,4 +66,25 @@ function validateSum(e){
             $(e.target).val(max);
         }
     }
+}
+
+function initCalcForm(){
+    $form = $('#form-calc');
+    $form.submit(handleSubmitCalcForm);
+}
+
+function handleSubmitCalcForm(e){
+    e.preventDefault();
+    console.log(getFormData($(e.target)));
+}
+
+function getFormData($form){
+    const unindexed_array = $form.serializeArray();
+    const indexed_array = {};
+
+    $.map(unindexed_array, function(n, i){
+        indexed_array[n['name']] = n['value'];
+    });
+
+    return indexed_array;
 }

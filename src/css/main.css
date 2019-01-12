@@ -1182,9 +1182,11 @@ body {
       margin-right: 27px; }
       .form-calc__group .radio-group input {
         margin-right: 9px; }
-  .form-calc .result__label {
-    color: #395306;
-    font-weight: bold; }
+  .form-calc .result {
+    display: none; }
+    .form-calc .result__label {
+      color: #395306;
+      font-weight: bold; }
   .form-calc button {
     margin: 20px 20px; }
 
