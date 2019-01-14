@@ -10,7 +10,6 @@
 
 
 const PERCENT = 10;
-const DAYSN = 365;
 
 /**
  * Функция устанавливает код состояния HTTP,
@@ -124,8 +123,6 @@ if ($isReplenished === null){
 $daysN = DateTime::createFromFormat('d.m.Y', $dataDeposit);
 if (!$daysN){
     $errorInfo["typeError"][]="dataDeposit";
-} else {
-    $daysN = $daysN->format('t');
 }
 
 if (!empty($errorInfo)){
@@ -146,7 +143,7 @@ $end->modify('-1 month');
 $sum_last_month = $sumDeposit;
 foreach ( $period as $dt ){
     $DaysN = $dt->format('L')?366:365;
-    $pr = ($sum_last_month)*$dt->format('t')*(PERCENT/100/DAYSN);
+    $pr = ($sum_last_month)*$dt->format('t')*(PERCENT/100/$DaysN);
     $pr = round($pr,2);
     $sum_last_month = $sum_last_month+$pr;
 
