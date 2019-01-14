@@ -133,12 +133,28 @@ if (!empty($errorInfo)){
 }
 
 
-$months = $years*12;
 
 
-//summn=summ*(n-1)+(summ*(n-1) + summadd)*daysn(percent/daysy)
-$summn = $sumDeposit*($months-1) + ($isReplenished?($sumDeposit*($months-1) + $addSumDeposit):1)*$daysN*(PERCENT / DAYSN);
-$summn = intval($summn);
+$begin = new DateTime( $dataDeposit );
+$end = (new DateTime($dataDeposit))->modify('+'.$years.' year');
 
-responseJson($summn);
+$interval = DateInterval::createFromDateString('1 month');
+$period = new DatePeriod($begin, $interval, $end);
+
+$end->modify('-1 month');
+
+$sum_last_month = $sumDeposit;
+foreach ( $period as $dt ){
+    $DaysN = $dt->format('L')?366:365;
+    $pr = ($sum_last_month)*$dt->format('t')*(PERCENT/100/DAYSN);
+    $pr = round($pr,2);
+    $sum_last_month = $sum_last_month+$pr;
+
+    if ($dt !=  $end && $isReplenished){
+        $sum_last_month+=$addSumDeposit;
+    }
+}
+
+responseJson(round($sum_last_month,0));
+
 
